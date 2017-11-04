@@ -63,6 +63,13 @@ public class Main {
 			y3 = y3 - y1;
 
 			/**
+			 * 三点で三角形が作れるかチェックする
+			 */
+			if ((x2 * y3 - y2 * x3) == 0.0f) {
+				throw new IllegalArgumentException("三点が同一直線上に存在します");
+			}
+
+			/**
 			 * X^2 + Y^2 - 2mX - 2nY + l = 0 を解いて、中心と半径を求める
 			 */
 			centerX = ((x3 * x3 + y3 * y3) * y2 - (x2 * x2 + y2 * y2) * y3) / (2.0f * (x3 * y2 - x2 * y3));

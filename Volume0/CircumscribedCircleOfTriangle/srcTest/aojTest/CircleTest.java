@@ -23,4 +23,17 @@ public class CircleTest {
 			assertEquals("1.414", String.format("%.3f", circle.getRadius()));
 		}
 	}
+
+	public static class 異常試験 {
+		@Test
+		public void 三点が同一直線上にある() {
+			try {
+				new Circle(0.0f, 0.0f, 2.0f, 0.0f, 4.0f, 0.0f);
+				fail();
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 }
